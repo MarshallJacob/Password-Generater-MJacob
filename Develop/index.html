@@ -24,6 +24,31 @@
             aria-label="Generated Password"
           ></textarea>
         </div>
+        <div id = "formHeader" >
+          <h3 >(Please select desired perameters to include)</h3>
+        </div>
+        <form id = "passwordForm">
+          <div>
+            <label for = "characterRangeNumber">Length</label>
+            <input type = "number" min = "8" max = "128" value = "10" class = "checkBoxes" id = "characterRangeNumber">
+          </div>
+          <div>
+            <label for = "uppercaseLetters">Uppercase letters</label>
+            <input type = "checkbox" value = "checked" class = "checkBoxes" id = "uppercaseLetters">
+          </div>
+          <div>
+            <label for = "lowercaseLetters">Lowercase letters</label>
+            <input type = "checkbox" class = "checkBoxes" id = "lowercaseLetters">
+          </div>
+          <div>
+            <label for = "numbersBox">Numbers</label>
+            <input type = "checkbox" class = "checkBoxes" id = "numbersBox">
+          </div>
+          <div>
+            <label for = "symbolsBox">Symbols</label>
+            <input type = "checkbox" class = "checkBoxes" id = "symbolsBox">
+          </div>
+        </form>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
         </div>

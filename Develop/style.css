@@ -54,6 +54,14 @@ header {
   min-height: 100px;
 }
 
+#formHeader {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
 .card-footer {
   text-align: center;
 }
