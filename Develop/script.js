@@ -32,7 +32,6 @@ let characterValue = characterRangeNumber.value;
 
 
 function randomCharacters() {
-  var text = "";
   var passCharacters = {
     numbers: numbers.value,
     symbols: symbols.value,
@@ -46,14 +45,6 @@ function randomCharacters() {
     return console.log(randomCharacters)
 
 }
-
-
-
-
-// if (state === "checked")
-
-
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -111,22 +102,6 @@ uppercaseLetters.addEventListener('change', function(){
 });
 
     
-
-
-
-
-
-
-
-
-// var characterRangeNumber = characterRangeNumber.value;
-//   var uppercaseLetters = uppercaseLettersElement.checked;
-//   var lowercaseLetter = lowercaseLettersElement.checked;
-//   var numbersBox = numbersBoxElement.checked;
-//   var symbolsBox = symbolsBoxElement.checked;
-
-// characterRangeNumber, uppercaseLetters, lowercaseLetter, numbersBox, symbolsBox
-
 
 
 // NOTES
