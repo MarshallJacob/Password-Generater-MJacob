@@ -8,30 +8,58 @@ var letterRange = (Array.from(Array(26)).map( (_, i) => i + 97));
 var lowerLetters = letterRange.map(code => String.fromCharCode(code));
 // Pulls from the lowercase letters array and converts them to uppercase. 
 var upperLetters = lowerLetters.map(letter => letter.toUpperCase());
+
 // Var for character amount selecter
-const characterRangeNumber = document.querySelector ("#characterRangeNumber");
+const characterRangeNumber = document.querySelector ("#characterRangeNumber").checked;
 // Var for lowercase selector
-const lowercaseLetters = document.querySelector ("#lowercaseLetters");
+const lowercaseLetters = document.querySelector ("#lowercaseLetters").checked;
 // Var for uppercase selector
-const uppercaseLetters = document.querySelector ("#uppercaseLetters");
+const uppercaseLetters = document.querySelector ("#uppercaseLetters").checked;
 // Var for numbers selector
-const numbersBox = document.querySelector ("#numbersBox");
+const numbersBox = document.querySelector ("#numbersBox").checked;
 // Var for symbols selector
-const symbolsBox = document.querySelector ("#symbolsBox");
+const symbolsBox = document.querySelector ("#symbolsBox").checked;
+//Pull random number
+let randomNumbers = numbers[Math.floor(Math.random() * numbers.length)];
+// Pull random symbol
+let randomSymbols = symbols[Math.floor(Math.random() * symbols.length)];
+// Pull random lowercase letter
+let randomLowerLetters = lowerLetters[Math.floor(Math.random() * lowerLetters.length)];
+// Pull random uppercase letter
+let randomUpperLetters = upperLetters[Math.floor(Math.random() * upperLetters.length)];
+//Pulls the value from the character range
+let characterValue = characterRangeNumber.value;
 
-let randomNumbers = numbers[Math.floor(Math.random() * numbers.length)]
 
-let randomSymbols = symbols[Math.floor(Math.random() * symbols.length)]
+function randomCharacters() {
+  var text = "";
+  var passCharacters = {
+    numbers: numbers.value,
+    symbols: symbols.value,
+    lowerLetters: lowerLetters.value,
+    upperLetters: upperLetters.value,
+  };
 
-let randomLowerLetters = lowerLetters[Math.floor(Math.random() * lowerLetters.length)]
+  for (var i = 0; i < characterValue; i++)
+    text += passCharacters.charAt(Math.floor(Math.random() * passCharacters.length));
 
-let randomUpperLetters = upperLetters[Math.floor(Math.random() * upperLetters.length)]
+    return console.log(randomCharacters)
+
+}
+
+
+
+
+// if (state === "checked")
+
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Event listener to generate the password
-generateBtn.addEventListener("click", writePassword,)
+generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword(e) {
@@ -41,61 +69,53 @@ function writePassword(e) {
 
   passwordText.value = password;
 
-  return password
+  return 
 };
-
-
 
 function generatePassword () {
 
 
-  // characterRangeNumber.addEventListener('value', function(){
-      
-  // })
-
-  let characterValue = characterRangeNumber.value
-  console.log(characterValue)
   
-  numbersBox.addEventListener('change', function(){
-    if(numbersBox.checked)
-        randomNumbers 
-      else 
-        console.log(false)
-  })
-
-  symbolsBox.addEventListener('change', function(){
-    if(symbolsBox.checked)
-        console.log(randomSymbols)
-      else 
-        console.log(false)
-  })
-
-  lowercaseLetters.addEventListener('change', function(){
-    if(lowercaseLetters.checked)
-        console.log(randomLowerLetters)
-      else 
-        console.log(false)
-  })
-
-  uppercaseLetters.addEventListener('change', function(){
-    if(uppercaseLetters.checked)
-        console.log(randomUpperLetters)
-      else 
-        console.log(false)
-})
-
-return
-}
+  return
+  };
 
 
 
 
+numbersBox.addEventListener('change', function(){
+  if(numbersBox.checked)
+      console.log(randomNumbers)
+    else 
+      console.log(false)
+});
 
-// function setCharAmount(e) {
-//   const value = e.target.value
-//   characterRangeNumber.value = value
-//   return console.log(characterRangeNumber)
-// }
+symbolsBox.addEventListener('change', function(){
+  if(symbolsBox.checked)
+      console.log(randomSymbols)
+    else 
+      console.log(false)
+});
+
+lowercaseLetters.addEventListener('change', function(){
+  if(lowercaseLetters.checked)
+      console.log(randomLowerLetters)
+    else 
+      console.log(false)
+});
+
+uppercaseLetters.addEventListener('change', function(){
+  if(uppercaseLetters.checked)
+      console.log(randomUpperLetters)
+    else 
+      console.log(false)
+});
+
+    
+
+
+
+
+
 
 
 
