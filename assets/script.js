@@ -1,7 +1,7 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 // Event listener to generate the password
-generateBtn.addEventListener("click", generatePassword);
+generateBtn.addEventListener("click", writePassword);
 
 // Variable for number array
 const numbers = String.fromCharCode(...Array(123).keys()).slice(48, 58);
@@ -14,23 +14,6 @@ const letterRange = (Array.from(Array(26)).map( (_, i) => i + 97));
 const lowerLetters = String.fromCharCode(...Array(123).keys()).slice(97);
 // Pulls from the lowercase letters array and converts them to uppercase. 
 const upperLetters = String.fromCharCode(...Array(123).keys()).slice(65, 91);
-
-
-// function randomCharacters() {
-//   var passCharacters = {
-//     numbers: numbers.value,
-//     symbols: symbols.value,
-//     lowerLetters: lowerLetters.value,
-//     upperLetters: upperLetters.value,
-//   };
-
-//   for (var i = 0; i < characterValue; i++)
-//     text += passCharacters.charAt(Math.floor(Math.random() * passCharacters.length));
-
-//     return console.log(randomCharacters)
-
-// }
-
 
 
 // Promt to ask the user how long they would like their password to be
@@ -142,19 +125,7 @@ const includeUpperLetters = function () {
   return upperLetterResponse;
 };
 
-
-// Write password to the #password input
-function writePassword(e) {
-  e.preventDefault();
-  let password = generatePassword();
-  let passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-  return 
-};
-
-
+// call the generate password function upon user activation
 function generatePassword () {
   // call each function to activate prompts for the user
   passwordLength();
@@ -172,7 +143,7 @@ function generatePassword () {
   let characterString = '';
   let password = '';
 
-  // logic to handle each scenario of the user input
+  // logic to handle each outcome of the user input
   if (lowerLetterResponse && upperLetterResponse && numberResponse && symbolResponse) {
   characterString += lowerLetters + upperLetters + numbers + symbols;
   } else if (lowerLetterResponse && upperLetterResponse) {
@@ -194,7 +165,7 @@ function generatePassword () {
   }
 
 // loop through the selected password length to return the values of the selected characters to be used
-for (var i = 0; i < passwordLength; i++) {
+for (var i = 0; i < lengthResponse; i++) {
   password += characterString.charAt(
     Math.floor(Math.random() * characterString.length)
   );
@@ -203,4 +174,13 @@ for (var i = 0; i < passwordLength; i++) {
 return password;
 };
 
-    
+// Write password to the #password input
+function writePassword() {
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+  return 
+};
+
